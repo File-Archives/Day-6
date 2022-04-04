@@ -3,7 +3,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class ForLoopDemo {
+public class LoopDemo {
 	/**
 	 * 
 	 * @param row
@@ -27,8 +27,27 @@ public class ForLoopDemo {
 		
 		printStarPatternUsingTwoWhileLoops(inputPattern, 4);
 		
+		printStarPatternUsingTwoDoWhileLoops(inputPattern, 5);
+		
 	}
 	
+	private static void printStarPatternUsingTwoDoWhileLoops(char inputPattern, int row) {
+		
+		System.out.println("Do While:: ");
+		do {
+			int columns = 0;
+			do {
+				System.out.print(inputPattern);
+				columns++;
+				
+			}while(columns<row);
+			
+			System.out.println("");
+			row--;
+		}while(row>=1);
+		
+	}
+
 	private static void writeFile(String fileNameToWrite, String textToWrite) throws IOException {
 		File file = new File("/Users/ashish.amar/Documents/workspace-spring-tool-suite-4-4.14.0.RELEASE/Java Basics 2/" + fileNameToWrite);
 		FileWriter writer = new FileWriter(file);
